@@ -153,43 +153,29 @@ if analyze_button:
      )
 
 else:
-     
-    with st.spinner(
-        "🔍 Analyzing News using NLP..."
-     ):
 
+    with st.spinner("Analyzing News using NLP..."):
 
-     # Combine title and content
+        # Combine title and content
+        complete_news = news_title + " " + news_content
 
-        complete_news = (
-             news_title +
-             " " +
-             news_content
-     )
+        # NLP Processing
+        clean_text = preprocess_text(complete_news)
 
-     # NLP Processing
+        # Show NLP Steps
+        st.subheader("NLP Processing Steps")
 
-     clean_text = preprocess_text(
-            complete_news
-     )
+        steps = [
+            "Convert text to lowercase",
+            "Remove URLs and special characters",
+            "Tokenization",
+            "Stopword Removal",
+            "Lemmatization",
+            "TF-IDF Vectorization"
+        ]
 
-     # Show NLP Steps
-
-     st.subheader(
-            "🧠 NLP Processing Steps"
-     )
-
-     steps = [
-            "✅ Convert text to lowercase",
-            "✅ Remove URLs and special characters",
-            "✅ Tokenization",
-            "✅ Stopword Removal",
-            "✅ Lemmatization",
-            "✅ TF-IDF Feature Extraction"
-     ]
-for step in steps:
-
-     st.write(step)
+        for step in steps:
+            st.write(step)
 
      # TF-IDF Transformation
 
