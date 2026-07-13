@@ -154,7 +154,7 @@ if analyze_button:
 
 else:
      
-with st.spinner(
+    with st.spinner(
         "🔍 Analyzing News using NLP..."
      ):
 
