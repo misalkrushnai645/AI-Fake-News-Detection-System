@@ -82,12 +82,39 @@ def preprocess_text(text):
 
 st.subheader("News Analysis")
 
+sample_option = st.selectbox(
+    "Choose Sample News",
+    [
+        "Custom News",
+        "Real News Sample",
+        "Fake News Sample"
+    ]
+)
+
+sample_title = ""
+
+sample_content = ""
+
+if sample_option == "Real News Sample":
+
+    sample_title = "Reuters reports US inflation slows"
+
+    sample_content = "Reuters reported that inflation in the United States slowed during the latest quarter according to official government statistics."
+
+elif sample_option == "Fake News Sample":
+
+    sample_title = "Breaking: Secret government plan exposed"
+
+    sample_content = "A viral social media post claims that the government has secretly banned all cash transactions from tomorrow. No official source has confirmed this claim."
+
 news_title = st.text_input(
-    "Enter News Title"
+    "Enter News Title",
+    value=sample_title
 )
 
 news_content = st.text_area(
     "Enter News Content",
+    value=sample_content,
     height=250
 )
 
