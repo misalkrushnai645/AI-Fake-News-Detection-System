@@ -46,23 +46,6 @@ stop_words = set(stopwords.words("english"))
 
 lemmatizer = WordNetLemmatizer()
 
-# User Input
-
-st.subheader("News Analysis")
-
-news_title = st.text_input(
-    "Enter News Title"
-)
-
-news_content = st.text_area(
-    "Enter News Content",
-    height=250
-)
-
-analyze_button = st.button(
-    "Analyze News"
-)
-
 # Prediction
 
 if analyze_button:
@@ -137,6 +120,7 @@ def preprocess_text(text):
     return " ".join(words)
 
 sample_option = st.selectbox(
+      
     "Choose Sample News",
     [
         "Custom News",
