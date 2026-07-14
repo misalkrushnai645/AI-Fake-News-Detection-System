@@ -155,26 +155,16 @@ if analyze_button:
 
         for step in steps:
             
-        st.write(step)
+            st.write(step)
 
         st.subheader("Prediction")
 
         if prediction[0] == 0:
             
-        st.error("Prediction : Fake News")
+            st.error("Prediction : Fake News")
         
         else:
     
-        st.success("Prediction : Real News")
-
-        st.subheader("Prediction Result")
-
-        if prediction[0] == 0:
-
-            st.error("Prediction : Fake News")
-
-        else:
-
             st.success("Prediction : Real News")
 
 # Sidebar
