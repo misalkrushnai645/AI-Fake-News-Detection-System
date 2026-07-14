@@ -31,9 +31,9 @@ st.write(
 
 # Load Saved Model
 
-model = joblib.load("model/model.pkl")
+model = joblib.load("model.pkl")
 
-vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
+vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
 # Download Required NLTK Resources
 
