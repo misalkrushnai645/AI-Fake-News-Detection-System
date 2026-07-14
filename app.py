@@ -46,6 +46,38 @@ stop_words = set(stopwords.words("english"))
 
 lemmatizer = WordNetLemmatizer()
 
+# Text Preprocessing Function
+
+def preprocess_text(text):
+
+    text = text.lower()
+
+    text = re.sub(r"http\S+", "", text)
+
+    text = re.sub(r"www\S+", "", text)
+
+    text = re.sub(r"<.*?>", "", text)
+
+    text = text.translate(
+        str.maketrans("", "", string.punctuation)
+    )
+
+    text = re.sub(r"\d+", "", text)
+
+    words = text.split()
+
+    words = [
+        word for word in words
+        if word not in stop_words
+    ]
+
+    words = [
+        lemmatizer.lemmatize(word)
+        for word in words
+    ]
+
+    return " ".join(words)
+
 # User Input
 
 st.subheader("News Analysis")
@@ -90,38 +122,6 @@ if analyze_button:
         else:
 
             st.success("Prediction : Real News")
-
-# Text Preprocessing Function
-
-def preprocess_text(text):
-
-    text = text.lower()
-
-    text = re.sub(r"http\S+", "", text)
-
-    text = re.sub(r"www\S+", "", text)
-
-    text = re.sub(r"<.*?>", "", text)
-
-    text = text.translate(
-        str.maketrans("", "", string.punctuation)
-    )
-
-    text = re.sub(r"\d+", "", text)
-
-    words = text.split()
-
-    words = [
-        word for word in words
-        if word not in stop_words
-    ]
-
-    words = [
-        lemmatizer.lemmatize(word)
-        for word in words
-    ]
-
-    return " ".join(words)
 
 # Sidebar
 
