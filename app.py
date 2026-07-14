@@ -26,9 +26,9 @@ nltk.download("wordnet")
 
 # Load Model and TF-IDF Vectorizer
 
-model = joblib.load("model/model.pkl")
+model = joblib.load("model.pkl")
 
-vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
+vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
 
 # Initialize NLP Components
