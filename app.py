@@ -140,6 +140,33 @@ if analyze_button:
 
         prediction = model.predict(vector)
 
+        st.subheader("NLP Processing Steps")
+
+        steps = [
+            "Convert input text to lowercase",
+            "Remove URLs",
+            "Remove punctuation",
+            "Remove numbers",
+            "Tokenization",
+            "Stopword Removal",
+            "Lemmatization",
+            "TF-IDF Feature Extraction"
+        ]
+
+        for step in steps:
+            
+        st.write(step)
+
+        st.subheader("Prediction")
+
+        if prediction[0] == 0:
+            
+        st.error("Prediction : Fake News")
+        
+        else:
+    
+        st.success("Prediction : Real News")
+
         st.subheader("Prediction Result")
 
         if prediction[0] == 0:
